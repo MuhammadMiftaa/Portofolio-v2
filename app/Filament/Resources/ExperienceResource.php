@@ -76,7 +76,7 @@ class ExperienceResource extends Resource
 
             Forms\Components\Section::make('Job Responsibilities')
                 ->schema([
-                    Forms\Components\Repeater::make('jobDesks')
+                    Forms\Components\Repeater::make('jobDescs')
                         ->relationship()
                         ->label(false)
                         ->schema([
