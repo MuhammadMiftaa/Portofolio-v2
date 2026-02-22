@@ -54,10 +54,10 @@ class TechResource extends Resource
                     ->sortable()
                     ->weight('bold'),
 
-                Tables\Columns\TextColumn::make('icon')
+                Tables\Columns\ImageColumn::make('icon')
                     ->label('Icon')
-                    ->searchable()
-                    ->toggleable(),
+                    ->disk('public')
+                    ->size(40),
 
                 Tables\Columns\ColorColumn::make('color')
                     ->label('Color'),
