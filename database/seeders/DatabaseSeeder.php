@@ -208,7 +208,7 @@ class DatabaseSeeder extends Seeder
                 'start_date'  => '2024-09-09',
                 'end_date'    => '2024-12-31',
                 'tech_stack'  => ['HTML&CSS', 'Golang', 'AI', 'Javascript', 'React', 'GORM', 'PostgreSQL'],
-                'job_desks'   => [
+                'job_descs'   => [
                     'Develop web applications using ReactJS, HTML, CSS, and JavaScript, with an understanding of Single Page Applications and responsive design.',
                     'Implement version control using Git and GitHub, including handling merge requests and managing projects in repositories.',
                     'Build and manage RESTful APIs with HTTP methods, while understanding response codes and authentication.',
@@ -224,7 +224,7 @@ class DatabaseSeeder extends Seeder
                 'start_date'  => '2025-02-03',
                 'end_date'    => '2025-05-03',
                 'tech_stack'  => ['HTML&CSS', 'Typescript', 'React', 'Vite PWA', 'Laravel', 'Tailwind', 'MySQL', 'Vue', 'Github', 'SEO'],
-                'job_desks'   => [
+                'job_descs'   => [
                     'Designed and developed responsive landing pages and company profile websites using ReactJS and Tailwind CSS.',
                     'Built a Progressive Web App (PWA) for Gokopi\'s sales operation with real-time transaction features.',
                     'Improved and redesigned an existing HRIS dashboard interface built with VueJS.',
@@ -240,7 +240,7 @@ class DatabaseSeeder extends Seeder
                 'start_date'  => '2025-05-11',
                 'end_date'    => '2025-11-11',
                 'tech_stack'  => ['Go', 'Pocketbase', 'SQLite', 'PostgreSQL', 'Redis', 'Xendit', 'Postman', 'REST API', 'Gitlab', 'Agile'],
-                'job_desks'   => [
+                'job_descs'   => [
                     'Designed and structured relational databases by creating Entity Relationship Diagrams (ERDs) to model data relationships.',
                     'Built and implemented relational databases using PostgreSQL and SQLite, optimizing schema for performance and scalability.',
                     'Developed RESTful APIs to enable seamless integration between frontend and backend systems.',
@@ -255,8 +255,8 @@ class DatabaseSeeder extends Seeder
 
         foreach ($experiences as $experience) {
             $techStack = $experience['tech_stack'];
-            $jobDesks  = $experience['job_desks'];
-            unset($experience['tech_stack'], $experience['job_desks']);
+            $jobDescs  = $experience['job_descs'];
+            unset($experience['tech_stack'], $experience['job_descs']);
 
             $experienceId = DB::table('experiences')->insertGetId([
                 'title'      => $experience['title'],
@@ -282,10 +282,10 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
 
-            foreach ($jobDesks as $jobDesk) {
-                DB::table('experience_job_desks')->insert([
+            foreach ($jobDescs as $jobDesc) {
+                DB::table('experience_job_descs')->insert([
                     'experience_id' => $experienceId,
-                    'title'         => $jobDesk,
+                    'title'         => $jobDesc,
                     'description'   => null,
                     'created_at'    => now(),
                     'updated_at'    => now(),

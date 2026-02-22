@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ExperienceJobDesk extends Model
+class ExperienceJobDesc extends Model
 {
     protected $fillable = [
         'experience_id',

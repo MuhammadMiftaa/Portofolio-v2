@@ -28,8 +28,8 @@ class Experience extends Model
         return $this->hasMany(ExperienceTechStack::class);
     }
 
-    public function jobDesks(): HasMany
+    public function jobDescs(): HasMany
     {
-        return $this->hasMany(ExperienceJobDesk::class);
+        return $this->hasMany(ExperienceJobDesc::class);
     }
 }
