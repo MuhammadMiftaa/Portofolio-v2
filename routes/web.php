@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use Nette\Utils\Json;
 
 Route::get('/', function () {
     return Inertia::render('Landing');
